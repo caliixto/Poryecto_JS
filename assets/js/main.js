@@ -94,5 +94,45 @@ window.addEventListener("load", ()=>{
   });
 
 
+    function Login(){
+      let login__btn = document.querySelector(".login__btn");
+      let nombre = document.querySelector("#nombre");
+      let email = document.querySelector("#email");
+      let contra = document.querySelector("#contra");
+      login__btn.addEventListener("click", (e)=>{
+        e.preventDefault();
+        let n = nombre.value;
+        let em = email.value;
+        let c = contra.value;
+        
+        const Usuario = {
+          nombre:n,
+          email:em,
+          contra:c
+        }
+        localStorage.setItem("usua", JSON.stringify(Usuario));
+
+        nombre.value = "";
+        email.value = "";
+        contra.value = "";
+      })
+
+      let UsuarioGuardado = JSON.parse(localStorage.getItem("usua"));
+      let texto = document.createElement("p");
+      texto.classList.add("text__form");
+      let formulario = document.querySelector(".datos__form");
+      let mensaje = document.querySelector(".mensaje");
+
+        if(UsuarioGuardado){
+          formulario.style.display = "none";
+          texto.textContent = "Me llamo " + UsuarioGuardado.nombre + " y existo en el LocalStorage";
+          mensaje.appendChild(texto);
+          
+        }
+
+  }
+  Login();
+
+
 
 })
