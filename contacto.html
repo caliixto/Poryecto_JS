@@ -6,7 +6,6 @@
     <title>Document</title>
     <link rel="stylesheet" href="./assets/fonts/fontawesome-free-6.1.2-web/css/all.min.css">
     <link rel="stylesheet" href="./assets/css/styles.css">
-    <script src="./assets/js/main.js" defer></script>
     <script src="./assets/js/reloj.js" defer></script>
 </head>
 <body>
@@ -33,25 +32,32 @@
                 <li class="nav__list"><a href="#" class="nav__link contact">CONTACTO</a></li>
             </ul>
         </nav>
-        <div class="layout_menu">
-            <div class="menu__img">
-                <ul class="menu__img-list">
-                    <li><img src="./assets/img/hojas.jpg" alt=""  class="img__list img__list--shape1"></li>
-                    <li><img src="./assets/img/rojo.jpg" alt=""  class="img__list img__list--shape2"></li>
-                </ul>
-                <div class="menu__arrow">
-                    <a href="#" class="left__arrow"><img src="./assets/img/arrow-izq.png" alt=""></a>
-                    <a href="#" class="right__arrow"><img src="./assets/img/arrow-der.png" alt=""></a>
-                </div>
-            </div>
-        </div>
         <article class="layout_article">
             <section class="article__section">
-                <div class="caja__reloj">
-            
+                <div class="section__contacto contacto">
+                    <h1 class="section__contacto-tilte">Contacto</h1>
+                    <form action="" class="section__contacto-form">
+                        <label for="nombre">Nombre</label><br>
+                            <input type="text" id="contacto_nombre"><br>
+                        <label for="apellidos">Apellidos</label><br>
+                            <input type="text" id="contacto_apellidos"><br>
+                        <label for="email">Email</label><br>
+                            <input type="email" id="contacto_email"><br>
+                        <label for="sexo" class="contact_label-sex">Sexo</label><br>
+                            <select name="sexo" id="contact__sex">
+                            <option value="mujer">Mujer</option>
+                            <option value="hombre" selected>Hombre</option>
+                            <option value="otro" disabled>Otro</option>
+                        </select><br>
+                        <label for="fecha">Fecha Nacimiento</label><br>
+                            <input type="text" id="contacto_nacimiento"><br>
+                        <label for="edad">Edad</label><br>
+                            <input type="number" id="contacto_edad">
+                        <button type="submit" class="contacto__enviar">Enviar</button>
+                    </form>
                 </div>
             </section>
-            <aside class="aside__section">
+            <aside class="aside__section aside__section-contact">
                 <div class="aside__image">
                     <h2 class="aside__title">
                         Quien soy?
@@ -79,8 +85,7 @@
                         <br><br>
                         <label for="contra">Contraseña:</label>
                         <input type="password" name="" id="contra">
-                        <br><br>
-                        <button type="submit" class="registro__btn login__btn">Entrar</button>
+                        <button type="submit" class="registro__btn contact__btn">Entrar</button>
                     </form>
                     <div class="mensaje">
                             

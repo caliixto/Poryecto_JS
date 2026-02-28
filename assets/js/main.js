@@ -133,6 +133,87 @@ window.addEventListener("load", ()=>{
   }
   Login();
 
+  function SobreMi(){
+    let nav__sobremi = document.querySelector(".nav__sobremi");
+    let sobre__mi = document.querySelectorAll(".sobre__mi");
+
+    nav__sobremi.addEventListener("click", ()=>{
+      sobre__mi.forEach(sobre =>{
+        sobre.classList.toggle("sb_mi")
+        
+      })
+    })
+  }
+
+  SobreMi();
+
+  function Colores(){
+    let color__green = document.querySelector(".color__green");
+    let color__red = document.querySelector(".color__red");
+    let color__blue = document.querySelector(".color__blue");
+    let layout = document.querySelector(".layout")
+
+    color__green.addEventListener("click", ()=>{
+      layout.style.backgroundColor = "green";
+    });
+
+    color__red.addEventListener("click", ()=>{
+      layout.style.backgroundColor = "red";
+    });
+
+    color__blue.addEventListener("click", ()=>{
+      layout.style.backgroundColor = "blue";
+    });
+  }
+
+  Colores();
+
+  function mostrarContacto() {
+    let article = document.querySelector(".article__section");
+
+
+    let contact = document.querySelector(".contact");
+    let layout_menu = document.querySelector(".layout_menu");
+
+    contact.addEventListener("click", function(){
+      article.innerHTML = `
+        <div class="section__contacto contacto">
+            <h1 class="section__contacto-title">Contacto</h1>
+            <form class="section__contacto-form">
+                <label>Nombre</label><br>
+                <input type="text" id="contacto_nombre"><br>
+
+                <label>Apellidos</label><br>
+                <input type="text" id="contacto_apellidos"><br>
+
+                <label>Email</label><br>
+                <input type="email" id="contacto_email"><br>
+
+                <label>Sexo</label><br>
+                <select id="contact__sex">
+                    <option value="mujer">Mujer</option>
+                    <option value="hombre" selected>Hombre</option>
+                    <option value="otro" disabled>Otro</option>
+                </select><br>
+
+                <label>Fecha Nacimiento</label><br>
+                <input type="text" id="contacto_nacimiento"><br>
+
+                <label>Edad</label><br>
+                <input type="number" id="contacto_edad">
+
+                <button type="submit">Enviar</button>
+            </form>
+        </div>
+    `;
+      layout_menu.style.display = "none";
+    });
+}
+
+mostrarContacto();
+
+  
+
 
 
 })

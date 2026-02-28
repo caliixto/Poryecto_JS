@@ -43,11 +43,27 @@ body{
     margin-left: 1.5rem;
     align-items: center;
     width: 94.4%;
+    position: relative;
 }
 
 .nav__link{
     text-decoration: none;
     color: #FFFEFA;
+}
+
+.sobre__mi{
+    display: none;
+    position: absolute;
+    top: 80%;
+    border: 1px solid black;
+    width: 25%;
+    z-index: 9;
+    transition:  all 0.3s ease-in-out;
+    background-color: white;
+}
+
+.sb_mi{
+    display: block;
 }
 
 .layout_menu {
@@ -106,9 +122,11 @@ body{
 }
 
 .article__section{
+    display: block;
     width: 75%;
-    border: 1px solid black;
     padding-bottom: 2rem;
+    align-content: center;
+    justify-items: center;
 }
 .aside__section{
     width: 25%;
@@ -273,4 +291,54 @@ body{
     color: white;
     padding: 0.7rem;
     cursor: pointer;
+}
+
+/*Seccion Reloj*/
+
+.caja__reloj{
+    display: none;
+    width: 30%;
+    height: 30%;
+    align-content: center;
+    text-align: center;
+    border: 6px dashed black;
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+/*Seccion contacto*/
+
+.section__contacto{
+    width: 100%;
+    height: 100%;
+    margin-left:3rem ;
+}
+
+#contact__sex{
+    width: 20%;
+    background-color: lightgray;
+}
+
+.section__contacto-form input, select{
+    border: 1.5px solid gray;
+}
+
+.contact__btn{
+    width: 20%;
+    height: 2rem;
+    text-align: center;
+    border: 1px solid #E9E8ED;
+    cursor: pointer;
+    border-radius: 0.3rem;
+}
+
+.contacto__enviar{
+    background-color: lightgray;
+    padding: 0.5rem;
+    border: 1px solid lightgray;
+    cursor: pointer;
+}
+
+.aside__section-contact{
+    margin-bottom: 3rem;
 }
