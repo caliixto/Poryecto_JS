@@ -1,76 +1,42 @@
-@media(max-width:700px){
-    .layout{
-    max-width: 500px;
-    width: 100%;
-    min-height: 100vh;
-}
-
-.layout__header{
-    background-color: #1F87C4;
-    width: 50%;
-    text-align: center;
-    margin-top: 1rem; 
-    margin-left: 1.5rem; 
-    color: #FFFEFA;
-    padding: 0.1rem;
-}
-
-.nav__nav{
-    width: 92%;
-}
-
-.layout_menu{
-    width: 92%;
-    height: 200px;
-}
-
-.menu__arrow{
-    position: absolute;
-    display: flex;
-    gap: 22.5rem;
-    top: 45%;
-}
-}
-
-@media (max-width:701px){
-    .layout{
-        width: 80%;
-        min-height: 100vh;
-    }
-
-    .layout__header{
-    width: 50%;
-    }
-
-    .layout_menu{
-    width: 92%;
-    height: 200px;
-    }
-
-    .nav__nav{
-        width: 92%;
-    }
-
-    .menu__arrow{
-    position: absolute;
-    display: flex;
-    gap: 25.5rem;
-    top: 45%;
-    }
-}
 
 
+/* 📲 TABLET */
+@media (min-width: 768px) {
+   .layout{
+    width: 80%;
+   }
+   .layout__header{
+    width: 40%;
+   }
 
-/*
+   .layout_menu{
+    height: 250px;
+   }
 
-medidas oneplus
+   .layout_article{
+    flex-direction:column ;
+   }
 
-@media(max-width:412px){
+   .aside__section{
+    width: 90%;
+    margin: 0 auto;
+   }
 
+   .layout__footer{
+    width: 80%;
+   }
 
 }
 
-*/
+/* 💻 DESKTOP */
+@media (min-width: 1024px) {
+   
+}
+
+/* 🖥 GRANDE */
+@media (min-width: 1400px) {
+   
+}
 
 
 

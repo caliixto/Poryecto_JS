@@ -1,49 +1,91 @@
+/* ===== BASE MÓVIL ===== */
 * {
-  box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
-body{
+body {
+    min-height: 100vh;
     background-image: url("../img/cielo.jpg");
     background-repeat: no-repeat;
     background-size: cover;
-    position: relative;
-    margin-left: 0;
-    min-height: 100vh;
-}
-.layout {
-    width: 100%;
-    max-width: 1700px;   /* puedes probar 1500px si quieres */
-    min-height: 100vh;
-    background-color: #fff;
-    margin: 2rem auto;
-    padding-top: 0.1rem;
+    background-position: center;
+    font-family: sans-serif;
 }
 
-.layout__header {
-    background-color: #1F87C4;
-    width: 16%;
-    text-align: center;
-    margin-top: 1rem; 
-    margin-left: 1.5rem; 
-    color: #FFFEFA;
+.layout {
+    width: 95%;            /* casi todo el ancho en móviles */
+    max-width: 1200px;     /* límite para pantallas grandes */
+    margin: 2rem auto;     /* centra horizontalmente con un poco de espacio arriba/abajo */
+    min-height: 100vh;
+    background-color: #fff; /* fondo blanco */
+    padding: 1rem;          /* espacio interno */
+}
+
+/* Header, Nav, Menú */
+.layout__header,
+.nav__nav,
+.layout_menu {
+    width: 100%;       /* siempre ocupan todo el ancho del layout */
+    margin: 0;
     padding: 0.5rem;
 }
 
-.layout__header h1 {
-    margin: 0;            /* elimina el margin-top del h1 */
-    padding: 0;           /* opcional, elimina padding si existe */
+/* Layout article y secciones internas */
+.layout_article {
+    display: flex;
+    flex-direction: column; /* vertical en móvil */
+    gap: 1rem;
+}
+
+.article__section,
+.aside__section {
+    width: 100%;
+}
+
+/* Imágenes adaptables */
+.img__list--shape1,
+.img__list--shape2,
+.img__list--shape3,
+.image__img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Footer */
+.layout__footer {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0.5rem;
+    background-color: #414850;
+    color: #fff;
+}
+
+/* Elementos absolutos dentro de layout */
+
+
+body {
+    overflow-x: hidden;
+    position: relative;
+}
+
+
+.layout__header{
+    background-color: #1F87C4;
+    text-align: center;
+    padding-left: 0;
+    color: white;
 }
 
 .nav__nav{
     display: flex;
-    gap: 3rem;
     list-style: none;
     background-color: #333333;
-    height: 2.3rem;
-    margin-left: 1.5rem;
     align-items: center;
-    width: 94.4%;
-    position: relative;
+    justify-content: space-around;
+    margin-top: 0.5rem;
 }
 
 .nav__link{
@@ -51,95 +93,58 @@ body{
     color: #FFFEFA;
 }
 
-.sobre__mi{
-    display: none;
-    position: absolute;
-    top: 80%;
-    border: 1px solid black;
-    width: 25%;
-    z-index: 9;
-    transition:  all 0.3s ease-in-out;
-    background-color: white;
-}
-
-.sb_mi{
-    display: block;
-}
-
 .layout_menu {
-    width: 97%;
-    height: 480px;
+    height: 150px;
     overflow: hidden;
-    margin-left: 1.5rem;
+    margin-top: 0.5rem;
     padding: 0;
-    border: 2px solid lightgray; /* opcional */
+    border: 2px solid lightgray;
     box-sizing: border-box;
     position: relative;
 }
-
 .menu__img-list {
     list-style: none; /* elimina los bullets */
     margin: 0;        /* elimina margin por defecto de ul */
-    padding: 0;       /* elimina padding por defecto de ul */
-    display: flex;    /* opcional, si quieres que las imágenes estén en fila */
+    padding: 0;       /* elimina padding por defecto de ul */   /* opcional, si quieres que las imágenes estén en fila */
     height: 100%;     /* asegura que ocupe toda la altura del contenedor */
-}
-
-.menu__img-list li {
-    margin: 0;
-    padding: 0;
-    height: 100%;     /* asegura que cada li ocupe toda la altura */
-}
-
-.img__list--shape1,
-.img__list--shape2 {
-    width: 100%;       /* ocupa todo el ancho del li */
-    height: 100%;      /* ocupa toda la altura del li */
-    object-fit: cover; /* recorta manteniendo proporción */
-    display: block;    /* elimina espacio debajo de la imagen */
-    margin: 0;
-    padding: 0;
-}
-
-.menu__arrow{
-    position: absolute;
-    display: flex;
-    gap: 85rem;
-    top: 45%;
-}
-.menu__img-list li{
-    list-style: none;
 }
 
 .img__list--shape2{
     display: none;
 }
 
-.layout_article{
+.menu__arrow{
+    position: absolute;
+    top: 35%;
+    left: 0;
     width: 100%;
     display: flex;
-    gap: 2rem;
+    justify-content: space-between;
 }
 
-.article__section{
-    display: block;
-    width: 75%;
-    padding-bottom: 2rem;
-    align-content: center;
-    justify-items: center;
-}
-.aside__section{
-    width: 25%;
-    margin-right: 1.5rem;
+.layout_article{
+    margin-top: 0.5rem;
 }
 
-.image__img{
-    width: 100%;
-
+.article__section__h2{
+    margin-top: 2rem;
+    font-size: 1.7rem;
+    font-weight: bold;
+}
+.article__fecha{
+    font-size: 1rem;
+    color: lightgray;
 }
 
-.img__list--shape3{
-    width: 100%;
+.description{
+    margin-bottom: 1.6rem;
+}
+
+.article__btn{
+    background-color:#1F87C4;
+    color: white;
+    padding: 0.7rem;
+    cursor: pointer;
 }
 
 .aside__title{
@@ -157,7 +162,6 @@ body{
     font-family: 400;
     margin-bottom:1.2rem;
 }
-
 .datos__title {
     display: flex;
     align-items: center;
@@ -165,6 +169,10 @@ body{
     font-size: 1.3rem;
     font-weight: bold;
     color: black;
+}
+
+.image__img{
+    margin-bottom: 0.5rem;
 }
 
 .datos__title::before,
@@ -206,52 +214,21 @@ body{
     line-height: 2rem;
 }
 
-/*FOTTER*/
-.layout__footer{
-    display: flex;
-    justify-content: space-between;
-    width: 80%;
-    height: 2.7rem;
-    background-color: #414850;
-    padding-left: 0.4rem;
-    padding-right: 0.4rem;
-    margin: 0 auto;
-    opacity: 0.8;
-}
-
-.footer__text{
-    font-size: 1rem;
-    color: #FFFFFF;
-    font-family: 400;
-}
-
-.footer__up{
-    font-size: 1rem;
-    font-family: 400;
-}
-.footer__link{
-    text-decoration: none;
-    color: #FFFFFF;
-}
-
 /*COLORES*/
 
 .colors__color{
-    width: 2rem;
-    height: 6rem;
-    background-color:#414850 ;
+    display: flex;
     position: absolute;
-    padding-left: 0.5rem;
-    opacity: 0.7;
-    top: 20%;
-    margin-left: 0;
+    left: 40%;
+    width: 20%;
+    border: 1px solid black;
+    justify-content: space-around;
 }
 
 .color__div{
-    width: 70%;
-    height: 20%;
-    border: 1px solid yellow;
-    margin-top: 0.4rem;
+    width: 100%;
+    height: 15px;
+    border: 1px solid black;
     cursor: pointer;
 }
 
@@ -267,78 +244,32 @@ body{
     background-color: lightblue;
 }
 
-/*SECCION ARTICULOS*/
-
-.clase__article{
-    padding-left: 1.4rem;
+/*FOTTER*/
+.layout__footer{
+    display: flex;
+    justify-content: space-between;
+    height: 2.7rem;
+    background-color: #414850;
+    margin: 0 auto;
+    opacity: 0.8;
 }
 
-.article__section__h2{
-    font-size: 1.7rem;
-    font-weight: bold;
-}
-.article__fecha{
-    font-size: 1rem;
-    color: lightgray;
+.footer__text{
+    font-size: 0.7rem;
+    color: #FFFFFF;
+    font-family: 400;
 }
 
-.description{
-    margin-bottom: 1.6rem;
+.footer__up{
+    font-size: 0.7rem;
+    font-family: 400;
+}
+.footer__link{
+    text-decoration: none;
+    color: #FFFFFF;
 }
 
-.article__btn{
-    background-color:#1F87C4;
-    color: white;
-    padding: 0.7rem;
-    cursor: pointer;
-}
 
-/*Seccion Reloj*/
-
-.caja__reloj{
+.sobre__mi{
     display: none;
-    width: 30%;
-    height: 30%;
-    align-content: center;
-    text-align: center;
-    border: 6px dashed black;
-    font-size: 1.8rem;
-    font-weight: bold;
-}
-
-/*Seccion contacto*/
-
-.section__contacto{
-    width: 100%;
-    height: 100%;
-    margin-left:3rem ;
-}
-
-#contact__sex{
-    width: 20%;
-    background-color: lightgray;
-}
-
-.section__contacto-form input, select{
-    border: 1.5px solid gray;
-}
-
-.contact__btn{
-    width: 20%;
-    height: 2rem;
-    text-align: center;
-    border: 1px solid #E9E8ED;
-    cursor: pointer;
-    border-radius: 0.3rem;
-}
-
-.contacto__enviar{
-    background-color: lightgray;
-    padding: 0.5rem;
-    border: 1px solid lightgray;
-    cursor: pointer;
-}
-
-.aside__section-contact{
-    margin-bottom: 3rem;
 }
