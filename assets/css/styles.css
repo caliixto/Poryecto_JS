@@ -11,12 +11,12 @@ body{
     min-height: 100vh;
 }
 .layout {
-    width: 80%;
+    width: 100%;
+    max-width: 1700px;   /* puedes probar 1500px si quieres */
     min-height: 100vh;
-    background-color: #FFFFFF;
-    margin: 0 auto;       /* centra la caja horizontalmente */
-    padding-top: 0.1rem;  /* rompe el colapso de margen vertical */
-    margin-bottom: 3rem;
+    background-color: #fff;
+    margin: 2rem auto;
+    padding-top: 0.1rem;
 }
 
 .layout__header {
