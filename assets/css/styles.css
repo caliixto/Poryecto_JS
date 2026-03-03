@@ -1,4 +1,5 @@
 /* ===== BASE MÓVIL ===== */
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -52,15 +53,6 @@ body {
     max-width: 100%;
     height: auto;
     display: block;
-}
-
-/* Footer */
-.layout__footer {
-    width: 100%;
-    margin: 0 auto;
-    padding: 0.5rem;
-    background-color: #414850;
-    color: #fff;
 }
 
 /* Elementos absolutos dentro de layout */
@@ -130,10 +122,12 @@ body {
     margin-top: 2rem;
     font-size: 1.7rem;
     font-weight: bold;
+    padding-bottom: 0.7rem ;
 }
 .article__fecha{
     font-size: 1rem;
     color: lightgray;
+    padding-bottom: 0.7rem ;
 }
 
 .description{
@@ -247,6 +241,7 @@ body {
 /*FOTTER*/
 .layout__footer{
     display: flex;
+    width: 95%;
     justify-content: space-between;
     height: 2.7rem;
     background-color: #414850;

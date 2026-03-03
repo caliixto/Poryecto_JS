@@ -9,6 +9,11 @@
     width: 40%;
    }
 
+   .colors__color{
+      left: 45%;
+      width: 6rem;
+   }
+
    .layout_menu{
     height: 250px;
    }
@@ -30,12 +35,315 @@
 
 /* 💻 DESKTOP */
 @media (min-width: 1024px) {
-   
+   .layout{
+      width: 70%;
+   }
+
+
+   .layout_menu{
+    height: 300px;
+   }
+
+   .aside__section{
+      width: 70%;
+   }
+
+   .aside__image{
+      width: 100%;
+   }
+
+   .colors__color{
+      left: 45%;
+      width: 7rem;
+   }
+   .color__div{
+    width: 50%;
+    height: 15px;
+    border: 1px solid black;
+    cursor: pointer;
+   }
+
+   .footer__text{
+    font-size: 0.9rem;
+    color: #FFFFFF;
+    font-family: 400;
+   }
+
+   .footer__up{
+      font-size: 0.9rem;
+      font-family: 400;
+   }
+
+   .mensaje{
+      text-align: center;
+   }
+
+   .text__form{
+      font-size: 1.2rem;
+      font-family: 400;
+   }
+
+   .layout__footer{
+      width: 70%;
+   }
+
 }
 
 /* 🖥 GRANDE */
-@media (min-width: 1400px) {
-   
+@media (min-width: 1200px) {
+   .layout{
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+   }
+
+   .nav__nav{
+      justify-content: start;
+   }
+
+   .nav__list{
+      padding-right: 2rem;
+   }
+
+   .inicio{
+      padding-left: 1rem;
+   }
+
+   .colors__color{
+      display: block;
+      width: 2rem;
+      height: 6rem;
+      background-color:#414850 ;
+      position: absolute;
+      opacity: 0.7;
+      padding-left: 0.3rem;
+      justify-content: center;
+      align-content: center;
+      top: 20%;
+      left: 0;
+   }
+
+   .layout_article{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    margin-top: 2rem;
+   }
+
+   .article__section{
+      display: block;
+      width: 65%;
+      padding-bottom: 2rem;
+      align-content: center;
+      justify-items: center;
+      flex: 2;
+   }
+   .aside__section{
+      width: 35%;
+      padding-top: 2rem;
+      flex: 1;
+   }
+
+   .image__img{
+      width: 100%;
+   }
+
+   .img__list--shape3{
+      width: 100%;
+   }
+
+   .color__div{
+      width: 70%;
+      height: 20%;
+      border: 1px solid yellow;
+      cursor: pointer;
+   }
+
+   .aside__title{
+      display: flex;
+      align-items: center;
+      text-align: center;
+      font-size: 1.3rem;
+      font-weight: bold;
+   }
+
+   .aside__description{
+      padding: 0;
+      margin: 0;
+      font-size: 0.9rem;
+      font-family: 400;
+      margin-bottom:1.2rem;
+   }
+
+   .datos__title {
+      display: flex;
+      align-items: center;
+      text-align: center;
+      font-size: 1.3rem;
+      font-weight: bold;
+      color: black;
+   }
+
+   .datos__title::before,
+   .datos__title::after,
+   .aside__title::after,
+   .aside__title::before {
+      content: "";
+      flex: 1;                  /* ocupa todo el espacio disponible */
+      width: 30px;
+      height: 5px;              /* grosor de la línea */
+      background-color: lightgrey;  /* color de la línea */
+      margin: 0 0.2rem;           /* separación del texto */
+   }
+
+   #nombre,#email,#contra{
+      font-size: 1.1rem;
+   }
+
+   .datos__form input{
+      border: 1px solid lightgrey;
+      border-radius: 0.4rem;
+      width:75%;
+
+   }
+
+   .login__btn,
+   .registro__btn{
+      width: 100%;
+      height: 2rem;
+      text-align: center;
+      border: 1px solid #E9E8ED;
+      cursor: pointer;
+      border-radius: 0.3rem;
+   }
+
+   .text__form{
+      font-size: 1.5rem;
+      font-weight: 400;
+      line-height: 2rem;
+   }
+
+   .layout__footer{
+      width: 90%;
+      max-width: 1200px;
+      margin: 2rem auto 0 auto;
+   }
+
+   .footer__text{
+      font-size:1rem;
+      color: #FFFFFF;
+      font-family: 400;
+      align-content: center;
+      padding-left: 0.8rem;
+   }
+
+   .footer__up{
+      font-size: 1rem;
+      font-family: 400;
+      align-content: center;
+      padding-right: 0.8rem;
+   }
+   .footer__link{
+      text-decoration: none;
+      color: #FFFFFF;
+   }
+
+   /*Seccion Reloj*/
+
+   .caja__reloj{
+      display: none;
+      width: 30%;
+      height: 30%;
+      align-content: center;
+      text-align: center;
+      border: 6px dashed black;
+      font-size: 1.8rem;
+      font-weight: bold;
+   }
+
+   /*Seccion contacto*/
+
+   .section__contacto-title{
+      font-size: 1.5rem;
+      padding-bottom: 1.2rem;
+   }
+
+   .section__contacto{
+      width: 100%;
+      height: 100%;
+      margin-left:1rem ;
+      margin-top: 2rem;
+   }
+
+   #contact__sex{
+      width: 20%;
+      height: 1.4rem;
+      background-color: lightgray;
+   }
+
+   .section__contacto-form input, select{
+      border: 1.5px solid gray;
+   }
+
+   .section__contacto-form input{
+      height: 1.4rem;
+      width: 30%;
+   }
+
+   .aside__section-contact{
+      margin-bottom: 3rem;
+   }
+
+   .section__contacto-form button{
+      padding: 0.5rem;
+      background-color: lightgray;
+   }
+
+   /*Mensaje*/
+
+   .mensaje{
+      text-align: center;
+   }
+
+   .text__form{
+      font-size: 1.2rem;
+      font-family: 400;
+   }
+
+   /*Seccion de Sobre Mi*/
+
+   .section__acordeon{
+      width: 70%;
+   }
+
+   .acordeon__item{
+      width: 100%;
+      border: 1px solid #E9E8ED;
+      margin-bottom: 0.2rem;
+      background-color: #E9E8ED;
+   }
+
+   .acordeon__title{
+      width: 100%;
+      height: 2rem;
+      background-color: #E9E8ED;
+      font-size: 1.2rem;
+   }
+
+   .acordeon__text{
+      text-align: start;
+   }
+
+   .acordeon__content{
+      display: none;
+   }
+
+   .acordeon__title:hover{
+      background-color:#1F87C4;
+      color: white;
+   }
+
 }
 
 

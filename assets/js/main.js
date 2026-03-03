@@ -181,23 +181,23 @@ window.addEventListener("load", ()=>{
             <h1 class="section__contacto-title">Contacto</h1>
             <form class="section__contacto-form">
                 <label>Nombre</label><br>
-                <input type="text" id="contacto_nombre"><br>
+                <input type="text" id="contacto_nombre"><br><br>
 
                 <label>Apellidos</label><br>
-                <input type="text" id="contacto_apellidos"><br>
+                <input type="text" id="contacto_apellidos"><br><br>
 
                 <label>Email</label><br>
-                <input type="email" id="contacto_email"><br>
+                <input type="email" id="contacto_email"><br><br>
 
                 <label>Sexo</label><br>
                 <select id="contact__sex">
                     <option value="mujer">Mujer</option>
                     <option value="hombre" selected>Hombre</option>
                     <option value="otro" disabled>Otro</option>
-                </select><br>
+                </select><br><br>
 
                 <label>Fecha Nacimiento</label><br>
-                <input type="text" id="contacto_nacimiento"><br>
+                <input type="text" id="contacto_nacimiento"><br><br>
 
                 <label>Edad</label><br>
                 <input type="number" id="contacto_edad">
@@ -218,6 +218,13 @@ inicio.addEventListener("click",()=>{
   window.location.href = "../index.html";
 })
   
+
+let acordeon__text__somos = document.querySelector(".acordeon__text__somos");
+let acordeon__content = document.querySelector(".acordeon__content");
+
+acordeon__text__somos.addEventListener("click", ()=>{
+  acordeon__content.style.display = "block";
+})
 
 
 
