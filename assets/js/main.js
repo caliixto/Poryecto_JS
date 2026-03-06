@@ -133,20 +133,6 @@ window.addEventListener("load", ()=>{
   }
   Login();
 
-  function SobreMi(){
-    let nav__sobremi = document.querySelector(".nav__sobremi");
-    let sobre__mi = document.querySelectorAll(".sobre__mi");
-
-    nav__sobremi.addEventListener("click", ()=>{
-      sobre__mi.forEach(sobre =>{
-        sobre.classList.toggle("sb_mi")
-        
-      })
-    })
-  }
-
-  SobreMi();
-
   function Colores(){
     let color__green = document.querySelector(".color__green");
     let color__red = document.querySelector(".color__red");
@@ -212,19 +198,69 @@ window.addEventListener("load", ()=>{
 
 mostrarContacto();
 
+
+function MostrarSobreMi(){
+  let article = document.querySelector(".article__section");
+  let nav__sobremi = document.querySelector(".nav__sobremi");
+  let layout_menu = document.querySelector(".layout_menu");
+
+
+  nav__sobremi.addEventListener("click", function(){
+      article.innerHTML = `
+        <h2 class="acordeon__h2">Sobre Mi</h2>
+
+            <article class="section__acordeon acordeon">
+
+                <div class="acordeon__item">
+                    <button class="acordeon__title acordeon__text__somos">Quiénes somos?</button>
+                    <div class="acordeon__content content__somos">
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sapiente eos eum molestias magnam maxime rem laudantium voluptates aliquid,</p>
+                    </div>
+                </div>
+
+                <div class="acordeon__item">
+                    <button class="acordeon__title acordeon__text__somos">Nuestros servicios</button>
+                    <div class="acordeon__content content__servivios">
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sapiente eos eum molestias magnam maxime rem laudantium voluptates aliquid,</p>
+                    </div>
+                </div>
+
+                <div class="acordeon__item">
+                    <button class="acordeon__title acordeon__text__somos">Nuestros clientes</button>
+                    <div class="acordeon__content content__clientes">
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sapiente eos eum molestias magnam maxime rem laudantium voluptates aliquid,</p>
+                    </div>
+                </div>
+
+            </article>
+    `;
+      layout_menu.style.display = "none";
+    });
+
+}
+
+SobreMi();
+
+MostrarSobreMi();
+
+
+ function SobreMi(){
+    let acordeon__title = document.querySelectorAll(".acordeon__title");
+
+    acordeon__title.forEach(boton => {
+      boton.addEventListener("click", ()=>{
+        boton.nextElementSibling.classList.toggle("active");
+      })
+    })
+  }
+
 let inicio = document.querySelector(".inicio");
 
 inicio.addEventListener("click",()=>{
   window.location.href = "../index.html";
 })
+
   
-
-let acordeon__text__somos = document.querySelector(".acordeon__text__somos");
-let acordeon__content = document.querySelector(".acordeon__content");
-
-acordeon__text__somos.addEventListener("click", ()=>{
-  acordeon__content.style.display = "block";
-})
 
 
 

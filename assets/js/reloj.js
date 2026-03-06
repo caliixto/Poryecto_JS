@@ -30,4 +30,16 @@ reloj.addEventListener("click", ()=>{
 
 Hora();
 
+ function SobreMi(){
+    let acordeon__title = document.querySelectorAll(".acordeon__title");
+
+    acordeon__title.forEach(boton => {
+      boton.addEventListener("click", ()=>{
+        boton.nextElementSibling.classList.toggle("active");
+      })
+    })
+  }
+
+  SobreMi();
+
 
