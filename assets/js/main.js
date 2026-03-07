@@ -138,21 +138,26 @@ window.addEventListener("load", ()=>{
     let color__green = document.querySelector(".color__green");
     let color__red = document.querySelector(".color__red");
     let color__blue = document.querySelector(".color__blue");
-    let layout = document.querySelector(".layout")
 
     color__green.addEventListener("click", ()=>{
-      layout.style.backgroundColor = "green";
-      document.body.style.backgroundImage = "url('../img/hojas.jpg')";
-      document.body.style.backgroundSize = "cover";
-      document.body.style.backgroundRepeat = "no-repeat";
+      const link = document.createElement('link');
+      link.rel = 'stylesheet';
+      link.href = './assets/css/green.css';
+      document.head.appendChild(link);
     });
 
     color__red.addEventListener("click", ()=>{
-      layout.style.backgroundColor = "red";
+      const link = document.createElement('link');
+      link.rel = 'stylesheet';
+      link.href = './assets/css/red.css';
+      document.head.appendChild(link);
     });
 
     color__blue.addEventListener("click", ()=>{
-      layout.style.backgroundColor = "blue";
+      const link = document.createElement('link');
+      link.rel = 'stylesheet';
+      link.href = './assets/css/blue.css';
+      document.head.appendChild(link);
     });
   }
 

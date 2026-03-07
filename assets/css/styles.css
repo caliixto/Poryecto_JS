@@ -208,6 +208,19 @@ body {
     line-height: 2rem;
 }
 
+/*Reloj*/
+
+.caja__reloj{
+    display: none;
+    width: 50%;
+    height: 10rem;
+    align-content: center;
+    text-align: center;
+    border: 6px dashed black;
+    font-size: 1.8rem;
+    font-weight: bold;
+   }
+
 /*COLORES*/
 
 .colors__color{

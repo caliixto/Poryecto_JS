@@ -1,0 +1,25 @@
+:rooT{
+    --color-principal: #235E3D;
+    --color-varbar: #333333;
+}
+
+body {
+    min-height: 100vh;
+    background-image: url("../img/rojo.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    font-family: sans-serif;
+}
+
+.layout__header{
+    background-color: red;
+}
+
+.nav__nav{
+    background-color:  var(--color-varbar);
+}
+
+.article__btn{
+    background-color:red;
+}
