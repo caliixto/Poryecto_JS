@@ -1,4 +1,5 @@
 window.addEventListener("load", ()=>{
+  let intervaloReloj = null;
 
   let left__arrow  = document.querySelector(".left__arrow");
   let right__arrow = document.querySelector(".right__arrow");
@@ -64,7 +65,7 @@ window.addEventListener("load", ()=>{
       fe.classList.add("article__fecha");
       let desc = document.createElement("p");
       desc.classList.add("description");
-      let btn = document.createElement("btn");
+      let btn = document.createElement("button");
       btn.innerText = "Leer Mas";
       btn.classList.add("article__btn");
 
@@ -164,7 +165,9 @@ window.addEventListener("load", ()=>{
     let contact = document.querySelector(".contact");
     let layout_menu = document.querySelector(".layout_menu");
 
-    contact.addEventListener("click", function(){
+    contact.addEventListener("click", function(e){
+      e.preventDefault();
+      clearInterval(intervaloReloj);
       article.innerHTML = `
         <div class="section__contacto contacto">
             <h1 class="section__contacto-title">Contacto</h1>
@@ -195,8 +198,53 @@ window.addEventListener("load", ()=>{
             </form>
         </div>
     `;
-      layout_menu.style.display = "none";
-    });
+  layout_menu.style.display = "none";
+
+  let form = document.querySelector(".section__contacto-form");
+
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    let nombre = document.querySelector("#contacto_nombre").value;
+    let apellidos = document.querySelector("#contacto_apellidos").value;
+    let email = document.querySelector("#contacto_email").value;
+    let contacto_nacimiento = document.querySelector("#contacto_nacimiento").value;
+    let contacto_edad = document.querySelector("#contacto_edad").value;
+    let edadNum = Number(contacto_edad); 
+    
+    if(nombre === ""){
+      alert("El nombre es obligatorio");
+      return;
+    }
+    else if(apellidos === ""){
+      alert("Los apellidos son obligatorios");
+      return;
+    }
+    else if(email === ""){
+      alert("El email es obligatorio");
+      return;
+    }
+    else if(contacto_nacimiento === ""){
+      alert("La fecha de nacimiento es obligatorio");
+      return;
+    }
+    else if(contacto_edad === ""){
+    alert("La edad es obligatoria");
+    return;
+  }
+    else if(edadNum < 0 || edadNum > 100){
+        alert("La edad no puede ser ni menor a 0 ni mayor a 100");
+        return;
+    }
+  else{
+      alert("formulario enviado correctamente");
+    }
+
+    form.reset();
+
+  }); 
+    
+
+  });
 }
 
 mostrarContacto();
@@ -208,7 +256,8 @@ function MostrarSobreMi(){
   let layout_menu = document.querySelector(".layout_menu");
 
 
-  nav__sobremi.addEventListener("click", function(){
+  nav__sobremi.addEventListener("click", function(e){
+    e.preventDefault();
       article.innerHTML = `
         <h2 class="acordeon__h2">Sobre Mi</h2>
 
@@ -262,12 +311,52 @@ function SobreMi(){
 
 let inicio = document.querySelector(".inicio");
 
-inicio.addEventListener("click",()=>{
+inicio.addEventListener("click",(e)=>{
+  e.preventDefault();
   window.location.href = "../index.html";
-})
+});
 
-  
+function Hora(){
+
+let article = document.querySelector(".article__section");
+let reloj = document.querySelector(".reloj");
+let layout_menu = document.querySelector(".layout_menu");
+
+reloj.addEventListener("click", (e)=>{
+    e.preventDefault();
+
+    clearInterval(intervaloReloj);
+
+    article.innerHTML = ""; // limpia el contenido
+    layout_menu.style.display = "none";
+
+    let caja = document.createElement("div");
+    caja.classList.add("caja__reloj");
+    article.style.display = "flex";
+    article.style.justifyContent = "center";
+    article.style.alignItems = "center";
+    article.style.minHeight = "400px"; // altura mínima, ajustar según necesidad
+    article.style.flexDirection = "column";
+
+    article.appendChild(caja);
+
+    intervaloReloj = setInterval(()=>{
+
+        let fecha = new Date();
+
+        let hora = fecha.getHours();
+        let minutos = fecha.getMinutes().toString().padStart(2,"0");
+        let segundos = fecha.getSeconds().toString().padStart(2,"0");
+
+        caja.innerHTML = `${hora}:${minutos}:${segundos}`;
+        caja.style.display = "block";
 
 
+    },1000);
+
+});
+}
+
+Hora();
 
 })

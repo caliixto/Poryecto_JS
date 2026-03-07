@@ -207,12 +207,11 @@
       display: block;
       width: 65%;
       padding-bottom: 2rem;
-      align-content: center;
-      justify-items: center;
       flex: 2;
       justify-items: flex-start;
       align-content: flex-start;
    }
+
    .aside__section{
       width: 35%;
       padding-top: 2rem;
