@@ -141,6 +141,9 @@ window.addEventListener("load", ()=>{
 
     color__green.addEventListener("click", ()=>{
       layout.style.backgroundColor = "green";
+      document.body.style.backgroundImage = "url('../img/hojas.jpg')";
+      document.body.style.backgroundSize = "cover";
+      document.body.style.backgroundRepeat = "no-repeat";
     });
 
     color__red.addEventListener("click", ()=>{
@@ -235,24 +238,27 @@ function MostrarSobreMi(){
             </article>
     `;
       layout_menu.style.display = "none";
+
+      SobreMi();
     });
 
-}
 
-SobreMi();
+}
 
 MostrarSobreMi();
 
 
- function SobreMi(){
+function SobreMi(){
+
     let acordeon__title = document.querySelectorAll(".acordeon__title");
 
     acordeon__title.forEach(boton => {
       boton.addEventListener("click", ()=>{
         boton.nextElementSibling.classList.toggle("active");
+         console.log(acordeon__title.length);
       })
     })
-  }
+}
 
 let inicio = document.querySelector(".inicio");
 
