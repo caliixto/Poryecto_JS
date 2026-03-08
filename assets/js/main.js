@@ -314,12 +314,6 @@ function SobreMi(){
     })
 }
 
-let inicio = document.querySelector(".inicio");
-
-inicio.addEventListener("click",(e)=>{
-  e.preventDefault();
-  window.location.href = "../index.html";
-});
 
 function Hora(){
 
