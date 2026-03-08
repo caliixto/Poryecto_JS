@@ -314,6 +314,15 @@ function SobreMi(){
     })
 }
 
+let inicio = document.querySelector(".inicio");
+
+inicio.addEventListener("click",(e)=>{
+  e.preventDefault();
+
+  clearInterval(intervaloReloj);
+
+  location.reload();
+});
 
 function Hora(){
 
